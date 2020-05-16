@@ -38,6 +38,8 @@ submitButton.addEventListener("click", () => {
     .post("/uploadfile", formData)
     .then((res) => {
       console.log(res);
+      console.log(res.data[0]);
+      document.getElementById('status').innerHTML = `${res.data[0]}`;
     })
     .catch((err) => {
       console.error(err);
