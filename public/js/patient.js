@@ -59,6 +59,10 @@ buttonContinueSexAge.onclick = function () {
     // Show the next section
     formSectionCurrentTreatmentStatus.hidden = false;
 
+    // Scroll to this next section
+    formSectionCurrentTreatmentStatus.scrollIntoView();
+    window.scrollBy(0, 0);
+
     // Disable this button (since the next section's button is what the user should use next)
     buttonContinueSexAge.disabled = true;
     buttonContinueSexAge.hidden = true;
@@ -68,6 +72,10 @@ buttonContinueCurrentTreatmentStatus.onclick = function () {
     // Show the next section
     formSectionPriorHealthConditions.hidden = false;
 
+    // Scroll to this next section
+    formSectionPriorHealthConditions.scrollIntoView();
+    window.scrollBy(0, -10);
+
     // Disable this button (since the next section's button is what the user should use next)
     buttonContinueCurrentTreatmentStatus.disabled = true;
     buttonContinueCurrentTreatmentStatus.hidden = true;
@@ -76,6 +84,10 @@ buttonContinueCurrentTreatmentStatus.onclick = function () {
 buttonContinuePriorHealthConditions.onclick = function () {
     // Show the next section
     formSectionSmoker.hidden = false;
+
+    // Scroll to this next section
+    formSectionSmoker.scrollIntoView();
+    window.scrollBy(0, -10);
 
     // The next section is the last one, so enable the submit button now
     buttonSubmit.hidden = false;
@@ -97,7 +109,7 @@ buttonSubmit.onclick = function () {
         document.getElementById("hypertension_yes").checked ? 1 : 0,
         document.getElementById("other_diseases_yes").checked ? 1 : 0,
         document.getElementById("smoker_yes").checked ? 1 : 0,
-        document.getElementById("icu_yes").checked ? 1 : 0
+        document.getElementById("icu_yes").checked ? 0 : 1
     ];
     tensorFlowModel.predict(tf.tensor([compiledPatientHealthData])).array().then(arr => {
         console.log(arr[0][0]);
