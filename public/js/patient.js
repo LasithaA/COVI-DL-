@@ -103,13 +103,18 @@ buttonSubmit.onclick = function () {
     sectionResults.scrollIntoView(true);
 
     // Compile the data from above into an array (formatted as required by the TensorFlow model)
+    let adjustedAge = document.getElementById("age_selector").value;
+    if (document.getElementById("other_diseases_yes").checked) {
+        adjustedAge += 1;
+    }
+    if (document.getElementById("smoker_yes").checked) {
+        adjustedAge += 3;
+    }
     const compiledPatientHealthData = [
         document.getElementById("sex_male").checked ? 0 : 1,
         document.getElementById("intubation_yes").checked ? 1 : 0,
         document.getElementById("pneumonia_yes").checked ? 1 : 0,
-        document.getElementById("age_selector").value
-            + (document.getElementById("other_diseases_yes").checked ? 1 : 0)
-            + (document.getElementById("smoker_yes").checked ? 3 : 0),
+        adjustedAge,
         document.getElementById("diabetes_yes").checked ? 1 : 0,
         document.getElementById("copd_yes").checked ? 1 : 0,
         document.getElementById("hypertension_yes").checked ? 1 : 0,
@@ -117,6 +122,7 @@ buttonSubmit.onclick = function () {
         0,
         document.getElementById("icu_yes").checked ? 0 : 1
     ];
+    console.log(compiledPatientHealthData);
     // Get the prediction from the model and display it
     tensorFlowModel.predict(tf.tensor([compiledPatientHealthData])).array().then(arr => {
         console.log(arr[0][0]);
