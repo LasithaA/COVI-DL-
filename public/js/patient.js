@@ -60,8 +60,7 @@ buttonContinueSexAge.onclick = function () {
     formSectionCurrentTreatmentStatus.hidden = false;
 
     // Scroll to this next section
-    formSectionCurrentTreatmentStatus.scrollIntoView();
-    window.scrollBy(0, 0);
+    document.getElementById("form_sex_done_scroll_to").scrollIntoView(true);
 
     // Disable this button (since the next section's button is what the user should use next)
     buttonContinueSexAge.disabled = true;
@@ -73,8 +72,7 @@ buttonContinueCurrentTreatmentStatus.onclick = function () {
     formSectionPriorHealthConditions.hidden = false;
 
     // Scroll to this next section
-    formSectionPriorHealthConditions.scrollIntoView();
-    window.scrollBy(0, -10);
+    document.getElementById("form_current_treatment_done_scroll_to").scrollIntoView(true);
 
     // Disable this button (since the next section's button is what the user should use next)
     buttonContinueCurrentTreatmentStatus.disabled = true;
@@ -86,8 +84,7 @@ buttonContinuePriorHealthConditions.onclick = function () {
     formSectionSmoker.hidden = false;
 
     // Scroll to this next section
-    formSectionSmoker.scrollIntoView();
-    window.scrollBy(0, -10);
+    document.getElementById("form_prior_current_health_conditions_scroll_to").scrollIntoView(true);
 
     // The next section is the last one, so enable the submit button now
     buttonSubmit.hidden = false;
