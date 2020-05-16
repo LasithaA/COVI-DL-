@@ -1,10 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Mukta:700");
+
 body {
 	margin: 0;
-	font-family: "Montserrat";
+	font-family: "Mukta";
 	background: white;
-	font-size: 17px;
+	display: flex;
+
 	height: 100vh;
+}
+
+$bg: #f3f8fa;
+$white: #fff;
+$black: #2452e6;
+
+@mixin transition(
+	$property: all,
+	$duration: 0.45s,
+	$ease: cubic-bezier(0.65, 0, 0.076, 1)
+) {
+	transition: $property $duration $ease;
 }
 
 .container {
@@ -23,28 +37,30 @@ body {
 		background: linear-gradient(160deg, #1444e2 5%, #3609d8 100%);
 		padding: 1em;
 
-
 		p,
 		h1,
 		h3 {
 			color: white;
 		}
 	}
-	.right p {
-		margin: 2em 1em;
-	}
+	.right {
+		p {
+			margin: 2em 1em;
+		}
 
-	button {
-		width: 10em;
-		padding: 0.5em;
-		cursor: pointer;
+		.patientInfo {
+			padding: 1em;
+		}
+		.patientXray {
+			padding: 1em;
+		}
 	}
 }
 
 @media only screen and (min-width: 1000px) {
 	.inner {
 		display: grid;
-		grid-template-columns: 75% auto;
+		grid-template-columns: 65% auto;
 
 		.left {
 			text-align: left;

@@ -1,14 +1,3 @@
-// async function init() {
-//     const model = await tf.loadLayersModel('https://ritesh.social/ml/covid/patient_model/model.json');
-//     // model.summary();
-//
-//     model.predict(tf.tensor([[1, 0, 0, 20, 0, 0, 0, 0, 1, 0]])).array().then(arr => {
-//         console.log(arr[0][0]);
-//     });
-// }
-//
-// init();
-
 const formSectionSexAge = document.getElementById("form_sex_age");
 const formSectionCurrentTreatmentStatus = document.getElementById("form_current_treatment_status");
 const formSectionPriorHealthConditions = document.getElementById("form_prior_current_health_conditions");
@@ -35,7 +24,6 @@ for (inputItem of formSectionSexAge.querySelectorAll("input")) {
 // Current treatment status form section
 for (inputItem of formSectionCurrentTreatmentStatus.querySelectorAll("input")) {
     inputItem.onchange = function () {
-        console.log("did it");
         let formCompleted = (document.getElementById("intubation_yes").checked || document.getElementById("intubation_no").checked)
             && (document.getElementById("icu_yes").checked || document.getElementById("icu_no").checked);
 
@@ -98,5 +86,26 @@ buttonContinuePriorHealthConditions.onclick = function () {
 };
 
 buttonSubmit.onclick = function () {
-    // Call the patient.js code to get the prediction and display it to the user
+    // Compile the data from above into an array (formatted as required by the TensorFlow model)
+    const compiledPatientHealthData = [
+        document.getElementById("sex_male").checked ? 0 : 1,
+        document.getElementById("intubation_yes").checked ? 1 : 0,
+        document.getElementById("pneumonia_yes").checked ? 1 : 0,
+        document.getElementById("age_selector").value,
+        document.getElementById("diabetes_yes").checked ? 1 : 0,
+        document.getElementById("copd_yes").checked ? 1 : 0,
+        document.getElementById("hypertension_yes").checked ? 1 : 0,
+        document.getElementById("other_diseases_yes").checked ? 1 : 0,
+        document.getElementById("smoker_yes").checked ? 1 : 0,
+        document.getElementById("icu_yes").checked ? 1 : 0
+    ];
+    tensorFlowModel.predict(tf.tensor([compiledPatientHealthData])).array().then(arr => {
+        console.log(arr[0][0]);
+    });
 }
+
+var tensorFlowModel;
+(async function loadTensorFlowModel() {
+    tensorFlowModel = await tf.loadLayersModel('https://ritesh.social/ml/covid/patient_model/model.json');
+    // model.summary();
+})();
