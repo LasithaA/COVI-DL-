@@ -1,5 +1,5 @@
 
-
+/*
 function displayOptions(){
 
     document.getElementById("right").innerHTML ="";
@@ -31,3 +31,4 @@ function displayOptions(){
     div.appendChild(patientBtn);
     div.appendChild(xrayBtn);
 }
+*/
