@@ -11,204 +11,204 @@
     <div class="container-fluid bg-dark">
 
         <h1 class="text-success text-center font-weight-bold">PATIENT DYING RS? PAGE</h1>
+        <hr class="solid">
 
-        <div class="row">
-            <!--Left spacer element-->
-            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+        <div id="form-sex-age">
+            <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center" id="form_sex">
+                <h2 class="text-primary">Sex</h2>
+                <p class="text-white">What is your sex?</p>
+
+                <!--Select Male Button-->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" name="sex_options" id="sex_male" autocomplete="off">
+                    <label class="text-white custom-control-label" for="sex_male">Male</label>
+                </div>
+
+                <!--Select Female Button-->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" name="sex_options" id="sex_female" autocomplete="off">
+                    <label class="text-white custom-control-label" for="sex_female">Female</label>
+                </div>
             </div>
 
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <div id="form_sex">
-                    <h2 class="text-primary">Sex</h2>
-                    <p class="text-white">What is your sex?</p>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center" id="form_age">
+                <h2 class="text-primary">Age</h2>
+                <p class="text-white">How old are you?</p>
 
-                    <!--Select Male Button-->
+                <!--Select Age Input-->
+                <div class="def-number-input number-input">
+                    <!--<button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>-->
+                    <input class="quantity" min="0" name="age" value="1" type="number">
+                    <!--<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>-->
+                </div>
+            </div>
+        </div>
+        </div>
+        <br><br><hr class="solid">
+
+        <div id="form_current_treatment_status">
+            <h2 class="text-primary text-center">Current Treatment Status</h2>
+            <br>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center" id="form_intubated">
+                    <h3 class="text-info">Intubation</h3>
+                    <p class="text-white">Are you currently being intubated (i.e. requiring the assistance of a ventilator)?</p>
+
+                    <!--Select Yes-Intubated Button-->
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" name="sex_options" id="sex_male" autocomplete="off">
-                        <label class="text-white custom-control-label" for="sex_male">Male</label>
+                        <input type="radio" class="custom-control-input" name="intubation_options" id="intubation_yes" autocomplete="off">
+                        <label class="text-white custom-control-label" for="intubation_yes">Yes</label>
                     </div>
 
-                    <!--Select Female Button-->
+                    <!--Select No-Intubated Button-->
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" name="sex_options" id="sex_female" autocomplete="off">
-                        <label class="text-white custom-control-label" for="sex_female">Female</label>
+                        <input type="radio" class="custom-control-input" name="intubation_options" id="intubation_no" autocomplete="off">
+                        <label class="text-white custom-control-label" for="intubation_no">No</label>
                     </div>
                 </div>
 
-                <br><br>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center" id="form_icu">
+                    <h3 class="text-info">Intensive Care Unit (ICU)</h3>
+                    <p class="text-white">Are you currently admitted in the ICU?</p>
 
-                <div id="form_age">
-                    <h2 class="text-primary">Age</h2>
-                    <p class="text-white">How old are you?</p>
-
-                    <!--Select Age Input-->
-                    <div class="def-number-input number-input">
-                        <!--<button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>-->
-                        <input class="quantity" min="0" name="age" value="1" type="number">
-                        <!--<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>-->
-                    </div>
-                </div>
-
-                <br><br>
-
-                <div id="form_current_treatment_status">
-                    <h2 class="text-primary">Current Treatment Status</h2>
-                    <div id="form_intubated">
-                        <h3 class="text-info">Intubation</h3>
-                        <p class="text-white">Are you currently being intubated (i.e. requiring the assistance of a ventilator)?</p>
-
-                        <!--Select Yes-Intubated Button-->
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="intubation_options" id="intubation_yes" autocomplete="off">
-                            <label class="text-white custom-control-label" for="intubation_yes">Yes</label>
-                        </div>
-
-                        <!--Select No-Intubated Button-->
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="intubation_options" id="intubation_no" autocomplete="off">
-                            <label class="text-white custom-control-label" for="intubation_no">No</label>
-                        </div>
-                    </div>
-
-                    <br>
-
-                    <div id="form_icu">
-                        <h3 class="text-info">Intensive Care Unit (ICU)</h3>
-                        <p class="text-white">Are you currently admitted in the ICU?</p>
-
-                        <!--Select Yes-ICU Button-->
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="icu_options" id="icu_yes" autocomplete="off">
-                            <label class="text-white custom-control-label" for="icu_yes">Yes</label>
-                        </div>
-
-                        <!--Select No-ICU Button-->
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="icu_options" id="icu_no" autocomplete="off">
-                            <label class="text-white custom-control-label" for="icu_no">No</label>
-                        </div>
-                    </div>
-                </div>
-
-                <br><br>
-
-                <div id="form_prior_current_health_conditions">
-                    <h2 class="text-primary">Prior/Current Health Conditions</h2>
-
-                    <div id="form_pneumonia">
-                        <h3 class="text-info">Pneumonia</h3>
-                        <p class="text-white">Have you ever had pneumonia?</p>
-
-                        <!--Select Yes-Pneumonia Button-->
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="pneumonia_options" id="pneumonia_yes" autocomplete="off">
-                            <label class="text-white custom-control-label" for="pneumonia_yes">Yes</label>
-                        </div>
-
-                        <!--Select No-Pneumonia Button-->
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="pneumonia_options" id="pneumonia_no" autocomplete="off">
-                            <label class="text-white custom-control-label" for="pneumonia_no">No</label>
-                        </div>
-                    </div>
-
-                    <br>
-
-                    <div id="form_diabetes">
-                        <h3 class="text-info">Diabetes</h3>
-                        <p class="text-white">Have you ever had diabetes?</p>
-
-                        <!--Select Yes-Diabetes Button-->
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="diabetes_options" id="diabetes_yes" autocomplete="off">
-                            <label class="text-white custom-control-label" for="diabetes_yes">Yes</label>
-                        </div>
-
-                        <!--Select No-Diabetes Button-->
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="diabetes_options" id="diabetes_no" autocomplete="off">
-                            <label class="text-white custom-control-label" for="diabetes_no">No</label>
-                        </div>
-                    </div>
-
-                    <br>
-
-                    <div id="form_copd">
-                        <h3 class="text-info">Chronic Obstructive Pulmonary Disease (COPD)</h3>
-                        <p class="text-white">Have you ever had COPD?</p>
-
-                        <!--Select Yes-COPD Button-->
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="copd_options" id="copd_yes" autocomplete="off">
-                            <label class="text-white custom-control-label" for="copd_yes">Yes</label>
-                        </div>
-
-                        <!--Select No-COPD Button-->
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="copd_options" id="copd_no" autocomplete="off">
-                            <label class="text-white custom-control-label" for="copd_no">No</label>
-                        </div>
-                    </div>
-
-                    <br>
-
-                    <div id="form_hypertension">
-                        <h3 class="text-info">Hypertension</h3>
-                        <p class="text-white">Have you ever suffered from hypertension?</p>
-
-                        <!--Select Yes-Hypertension Button-->
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="hypertension_options" id="hypertension_yes" autocomplete="off">
-                            <label class="text-white custom-control-label" for="hypertension_yes">Yes</label>
-                        </div>
-
-                        <!--Select No-Hypertension Button-->
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="hypertension_options" id="hypertension_no" autocomplete="off">
-                            <label class="text-white custom-control-label" for="hypertension_no">No</label>
-                        </div>
-                    </div>
-
-                    <br>
-
-                    <div id="form_other_diseases">
-                        <h3 class="text-info">Other Diseases</h3>
-                        <p class="text-white">Have you ever had any other diseases, besides those listed above?</p>
-
-                        <!--Select Yes-OtherDiseases Button-->
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="other_diseases_options" id="other_diseases_yes" autocomplete="off">
-                            <label class="text-white custom-control-label" for="other_diseases_yes">Yes</label>
-                        </div>
-
-                        <!--Select No-OtherDiseases Button-->
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="other_diseases_options" id="other_diseases_no" autocomplete="off">
-                            <label class="text-white custom-control-label" for="other_diseases_no">No</label>
-                        </div>
-                    </div>
-                </div>
-
-                <br><br>
-
-                <div id="form_smoker">
-                    <h2 class="text-primary">Smoker</h2>
-                    <p class="text-white">Are you currently a smoker?</p>
-
-                    <!--Select Yes-Smoker Button-->
+                    <!--Select Yes-ICU Button-->
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" name="smoker_options" id="smoker_yes" autocomplete="off">
-                        <label class="text-white custom-control-label" for="smoker_yes">Yes</label>
+                        <input type="radio" class="custom-control-input" name="icu_options" id="icu_yes" autocomplete="off">
+                        <label class="text-white custom-control-label" for="icu_yes">Yes</label>
                     </div>
 
-                    <!--Select No-Smoker Button-->
+                    <!--Select No-ICU Button-->
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" name="smoker_options" id="smoker_no" autocomplete="off">
-                        <label class="text-white custom-control-label" for="smoker_no">No</label>
+                        <input type="radio" class="custom-control-input" name="icu_options" id="icu_no" autocomplete="off">
+                        <label class="text-white custom-control-label" for="icu_no">No</label>
                     </div>
                 </div>
             </div>
         </div>
+        <br><br><hr class="solid">
+
+        <div id="form_prior_current_health_conditions">
+            <h2 class="text-primary text-center">Prior/Current Health Conditions</h2>
+            <br>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center" id="form_pneumonia">
+                    <h3 class="text-info">Pneumonia</h3>
+                    <p class="text-white">Have you ever had pneumonia?</p>
+
+                    <!--Select Yes-Pneumonia Button-->
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="pneumonia_options" id="pneumonia_yes" autocomplete="off">
+                        <label class="text-white custom-control-label" for="pneumonia_yes">Yes</label>
+                    </div>
+
+                    <!--Select No-Pneumonia Button-->
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="pneumonia_options" id="pneumonia_no" autocomplete="off">
+                        <label class="text-white custom-control-label" for="pneumonia_no">No</label>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center" id="form_diabetes">
+                    <h3 class="text-info">Diabetes</h3>
+                    <p class="text-white">Have you ever had diabetes?</p>
+
+                    <!--Select Yes-Diabetes Button-->
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="diabetes_options" id="diabetes_yes" autocomplete="off">
+                        <label class="text-white custom-control-label" for="diabetes_yes">Yes</label>
+                    </div>
+
+                    <!--Select No-Diabetes Button-->
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="diabetes_options" id="diabetes_no" autocomplete="off">
+                        <label class="text-white custom-control-label" for="diabetes_no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center" id="form_copd">
+                    <h3 class="text-info">Chronic Obstructive Pulmonary Disease (COPD)</h3>
+                    <p class="text-white">Have you ever had COPD?</p>
+
+                    <!--Select Yes-COPD Button-->
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="copd_options" id="copd_yes" autocomplete="off">
+                        <label class="text-white custom-control-label" for="copd_yes">Yes</label>
+                    </div>
+
+                    <!--Select No-COPD Button-->
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="copd_options" id="copd_no" autocomplete="off">
+                        <label class="text-white custom-control-label" for="copd_no">No</label>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center" id="form_hypertension">
+                    <h3 class="text-info">Hypertension</h3>
+                    <p class="text-white">Have you ever suffered from hypertension?</p>
+
+                    <!--Select Yes-Hypertension Button-->
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="hypertension_options" id="hypertension_yes" autocomplete="off">
+                        <label class="text-white custom-control-label" for="hypertension_yes">Yes</label>
+                    </div>
+
+                    <!--Select No-Hypertension Button-->
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="hypertension_options" id="hypertension_no" autocomplete="off">
+                        <label class="text-white custom-control-label" for="hypertension_no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center" id="form_other_diseases">
+                <h3 class="text-info">Other Diseases</h3>
+                <p class="text-white">Have you ever had any other diseases, besides those listed above?</p>
+
+                <!--Select Yes-OtherDiseases Button-->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" name="other_diseases_options" id="other_diseases_yes" autocomplete="off">
+                    <label class="text-white custom-control-label" for="other_diseases_yes">Yes</label>
+                </div>
+
+                <!--Select No-OtherDiseases Button-->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" name="other_diseases_options" id="other_diseases_no" autocomplete="off">
+                    <label class="text-white custom-control-label" for="other_diseases_no">No</label>
+                </div>
+            </div>
+            </div>
+        </div>
+        <br><br><hr class="solid">
+
+        <div id="form_smoker">
+            <h2 class="text-primary text-center">Smoker</h2>
+            <div class="text-center">
+                <p class="text-white">Are you currently a smoker?</p>
+
+                <!--Select Yes-Smoker Button-->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" name="smoker_options" id="smoker_yes" autocomplete="off">
+                    <label class="text-white custom-control-label" for="smoker_yes">Yes</label>
+                </div>
+
+                <!--Select No-Smoker Button-->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" name="smoker_options" id="smoker_no" autocomplete="off">
+                    <label class="text-white custom-control-label" for="smoker_no">No</label>
+                </div>
+            </div>
+        </div>
+        <br><br>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.7.4/dist/tf.min.js"></script>
