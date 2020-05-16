@@ -100,12 +100,14 @@ buttonSubmit.onclick = function () {
         document.getElementById("sex_male").checked ? 0 : 1,
         document.getElementById("intubation_yes").checked ? 1 : 0,
         document.getElementById("pneumonia_yes").checked ? 1 : 0,
-        document.getElementById("age_selector").value,
+        document.getElementById("age_selector").value
+            + (document.getElementById("other_diseases_yes").checked ? 1 : 0)
+            + (document.getElementById("smoker_yes").checked ? 3 : 0),
         document.getElementById("diabetes_yes").checked ? 1 : 0,
         document.getElementById("copd_yes").checked ? 1 : 0,
         document.getElementById("hypertension_yes").checked ? 1 : 0,
-        document.getElementById("other_diseases_yes").checked ? 1 : 0,
-        document.getElementById("smoker_yes").checked ? 1 : 0,
+        0,
+        0,
         document.getElementById("icu_yes").checked ? 0 : 1
     ];
     tensorFlowModel.predict(tf.tensor([compiledPatientHealthData])).array().then(arr => {
