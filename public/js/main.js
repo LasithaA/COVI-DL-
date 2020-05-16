@@ -1,7 +1,7 @@
 
 
 function displayOptions(){
-    console.log("hello");
+
     document.getElementById("right").innerHTML ="";
     let h1 = document.createElement("h1");
     h1.innerHTML = "Choose An Option";
@@ -13,6 +13,7 @@ function displayOptions(){
         location.href = "/patient";
     };
     patientBtn.style.margin = '5px';
+    patientBtn.style.cursor = 'pointer';
  
 
     let xrayBtn = document.createElement("button");
@@ -22,6 +23,7 @@ function displayOptions(){
         location.href = "/xray";
     };
     xrayBtn.style.margin = '5px';
+    xrayBtn.style.cursor = 'pointer';
 
     let div = document.getElementById("right");
 
@@ -29,13 +31,3 @@ function displayOptions(){
     div.appendChild(patientBtn);
     div.appendChild(xrayBtn);
 }
-/*
-    document.getElementById("xrayButton").onclick = function () {
-        location.href = "/xray";
-    };
-
-    document.getElementById("patientButton").onclick = function () {
-        location.href = "/patient";
-    };
-
-*/
