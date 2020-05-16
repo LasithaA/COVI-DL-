@@ -129,7 +129,7 @@ buttonSubmit.onclick = function () {
         console.log("Precise: " + arr[0][0] + " Rounded: " + predictedPercentage);
 
         var percentageAnimationCurrentValue = 0;
-        let intervalTimeout = 4000 / predictedPercentage; // Fix the animation to last for 4 seconds
+        let intervalTimeout = 500 / predictedPercentage; // Fix the animation to last for 0.5 seconds
 
         const percentageDisplayInterval = setInterval(function () {
             document.getElementById("result_percentage").textContent = percentageAnimationCurrentValue + "%";
