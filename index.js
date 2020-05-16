@@ -3,7 +3,6 @@ const path = require("path");
 const app = express();
 const fs = require("fs");
 const multer = require("multer");
-
 // Imports the Google Cloud client library.
 const { Storage } = require("@google-cloud/storage");
 const { PredictionServiceClient } = require("@google-cloud/automl").v1;
@@ -31,22 +30,8 @@ app.use(
   })
 );
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/");
-  },
-
-  // By default, multer removes file extensions so let's add them back
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-    );
-  },
-});
-
 async function predict(locallyStoredFileName) {
-  const filePath = path.join(__dirname, locallyStoredFileName);
+  const filePath = path.join(__dirname, "uploads", locallyStoredFileName);
   // Read the file content for translation.
   const content = fs.readFileSync(filePath);
   // Construct request
@@ -96,8 +81,38 @@ async function predict(locallyStoredFileName) {
 
 // init();
 
-app.get("/predictXRay", (req, res) => {
-  res.send("ye ok");
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads");
+  },
+  filename: function (req, file, cb) {
+    cb(
+      null,
+      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+    );
+  },
+});
+
+var upload = multer({ storage: storage });
+
+app.post("/uploadfile", upload.single("myFile"), (req, res, next) => {
+  const file = req.file;
+  if (!file) {
+    const error = new Error("Please upload a file");
+    error.httpStatusCode = 400;
+    return next(error);
+  }
+  predict(file.filename)
+    .then((results) => {
+      console.log("Class: " + results[0]);
+      console.log("Score: " + results[1]);
+      fs.unlinkSync(path.join(__dirname, "uploads", file.filename));
+      res.send(results);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.send("Error: " + err);
+    });
 });
 
 const PORT = 443;

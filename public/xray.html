@@ -1,188 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Covid</title>
 
     <style>
-        .image-preview {
-            width: 400px;
-            min-height: 150px;
-            border: 2px solid #dddddd;
-            margin-top: 15px;
+      .image-preview {
+        width: 400px;
+        min-height: 150px;
+        border: 2px solid #dddddd;
+        margin-top: 15px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size:x-large;
-            font-weight: bold;
-            color: #cccccc;
-        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: x-large;
+        font-weight: bold;
+        color: #cccccc;
+      }
 
-        .preview-image {
-            display: none;
-            width: 100%;
-        }
-        .pure-material-button-contained {
-            position: relative;
-            display: inline-block;
-            box-sizing: border-box;
-            border: none;
-            border-radius: 4px;
-            padding: 0 16px;
-            min-width: 64px;
-            height: 36px;
-            vertical-align: middle;
-            text-align: center;
-            text-overflow: ellipsis;
-            text-transform: uppercase;
-            color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
-            background-color: #A9A9A9;
-            box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-            font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 36px;
-            overflow: hidden;
-            outline: none;
-            cursor: pointer;
-            transition: box-shadow 0.2s;
-        }
-        .pure-material-button-contained::-moz-focus-inner {
-    border: none;
-}
+      .preview-image {
+        display: none;
+        width: 100%;
+      }
+      .pure-material-button-contained {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 4px;
+        padding: 0 16px;
+        min-width: 64px;
+        height: 36px;
+        vertical-align: middle;
+        text-align: center;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+        color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+        background-color: #a9a9a9;
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+          0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        font-family: var(
+          --pure-material-font,
+          "Roboto",
+          "Segoe UI",
+          BlinkMacSystemFont,
+          system-ui,
+          -apple-system
+        );
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 36px;
+        overflow: hidden;
+        outline: none;
+        cursor: pointer;
+        transition: box-shadow 0.2s;
+      }
+      .pure-material-button-contained::-moz-focus-inner {
+        border: none;
+      }
 
-/* Overlay */
-.pure-material-button-contained::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
-    opacity: 0;
-    transition: opacity 0.2s;
-}
+      /* Overlay */
+      .pure-material-button-contained::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgb(
+          var(--pure-material-onprimary-rgb, 255, 255, 255)
+        );
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
 
-/* Ripple */
-.pure-material-button-contained::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    border-radius: 50%;
-    padding: 50%;
-    width: 32px; /* Safari */
-    height: 32px; /* Safari */
-    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1);
-    transition: opacity 1s, transform 0.5s;
-}
+      /* Ripple */
+      .pure-material-button-contained::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 50%;
+        padding: 50%;
+        width: 32px; /* Safari */
+        height: 32px; /* Safari */
+        background-color: rgb(
+          var(--pure-material-onprimary-rgb, 255, 255, 255)
+        );
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+        transition: opacity 1s, transform 0.5s;
+      }
 
-/* Hover, Focus */
-.pure-material-button-contained:hover,
-.pure-material-button-contained:focus {
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
-}
+      /* Hover, Focus */
+      .pure-material-button-contained:hover,
+      .pure-material-button-contained:focus {
+        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
+          0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+      }
 
-.pure-material-button-contained:hover::before {
-    opacity: 0.08;
-}
+      .pure-material-button-contained:hover::before {
+        opacity: 0.08;
+      }
 
-.pure-material-button-contained:focus::before {
-    opacity: 0.24;
-}
+      .pure-material-button-contained:focus::before {
+        opacity: 0.24;
+      }
 
-.pure-material-button-contained:hover:focus::before {
-    opacity: 0.3;
-}
+      .pure-material-button-contained:hover:focus::before {
+        opacity: 0.3;
+      }
 
-/* Active */
-.pure-material-button-contained:active {
-    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
-}
+      /* Active */
+      .pure-material-button-contained:active {
+        box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+          0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+      }
 
-.pure-material-button-contained:active::after {
-    opacity: 0.32;
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 0s;
-}
+      .pure-material-button-contained:active::after {
+        opacity: 0.32;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0s;
+      }
 
-/* Disabled */
-.pure-material-button-contained:disabled {
-    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
-    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.12);
-    box-shadow: none;
-    cursor: initial;
-}
+      /* Disabled */
+      .pure-material-button-contained:disabled {
+        color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+        background-color: rgba(
+          var(--pure-material-onsurface-rgb, 0, 0, 0),
+          0.12
+        );
+        box-shadow: none;
+        cursor: initial;
+      }
 
-.pure-material-button-contained:disabled::before {
-    opacity: 0;
-}
+      .pure-material-button-contained:disabled::before {
+        opacity: 0;
+      }
 
-.pure-material-button-contained:disabled::after {
-    opacity: 0;
-}
-body {
-  
-    background: linear-gradient(to right, #cc0000 0%, #99ccff 100%);
-}
-
+      .pure-material-button-contained:disabled::after {
+        opacity: 0;
+      }
+      body {
+        background: linear-gradient(to right, #cc0000 0%, #99ccff 100%);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Upload an Image of the patient's X-Ray</h1>
-    <br>
-    <form method="POST" action="/upload-xray" enctype="multipart/form-data">
-        <input type="file" name="sandFile" id="sandFile" accept="image/*" class="pure-material-button-contained">
-        <input class="pure-material-button-contained" type="submit" name="btn_upload_xray" value="Upload" />
-        
-    </form>
+    <br />
+    <!-- <form action="/uploadfile" enctype="multipart/form-data" method="POST"> -->
+      <input id="sandFile" type="file" name="myFile" accept="image/*"/>
+      <input id="submit-xray" type="submit" value="Upload a xray" />
+    <!-- </form> -->
+    <!-- pure-material-button-contained -->
 
     <div class="image-preview" id="imgPreview">
-    <img src="" alt="X-Ray Preview" class="preview-image">
-    <span class="default-text">Image Preview</span>
+      <img src="" alt="X-Ray Preview" class="preview-image" />
+      <span class="default-text">Image Preview</span>
     </div>
-
-    <script>
-        // document.body.style.background = yes;
-
-        // we want to display our image
-        const sandFile = document.getElementById('sandFile');
-        const previewContainer = document.getElementById('imgPreview');
-        const previewImage = previewContainer.querySelector('.preview-image');
-        const previewDefault = previewContainer.querySelector('.default-text');
-
-        // when file selected, get file object
-        sandFile.addEventListener('change', function(){
-            const file = this.files[0];
-
-            if(file && (file.size / 1024 / 1024 )<1.5){
-                // console.log('uploaded file');
-                
-                const reader = new FileReader();
-                // hide preview text and show the selected image
-                previewDefault.style.display = 'none';
-                previewImage.style.display = 'block';
-
-                reader.addEventListener('load', function(){
-                    // this.result refers to the data url of image
-                    console.log(this);
-                    previewImage.setAttribute("src", this.result);
-                });
-                reader.readAsDataURL(file);
-            }
-            else{
-                previewDefault.style.display = null;
-                previewImage.style.display = null;
-                previewImage.setAttribute("src", '');
-            }
-        });
-
-    </script>
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/xray.js"></script>
+  </body>
 </html>
