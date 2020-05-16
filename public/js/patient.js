@@ -125,7 +125,20 @@ buttonSubmit.onclick = function () {
     console.log(compiledPatientHealthData);
     // Get the prediction from the model and display it
     tensorFlowModel.predict(tf.tensor([compiledPatientHealthData])).array().then(arr => {
-        console.log(arr[0][0]);
+        const predictedPercentage = Math.round(arr[0][0] * 100);
+        console.log("Precise: " + arr[0][0] + " Rounded: " + predictedPercentage);
+
+        var percentageAnimationCurrentValue = 0;
+        let intervalTimeout = 4000 / predictedPercentage; // Fix the animation to last for 4 seconds
+
+        const percentageDisplayInterval = setInterval(function () {
+            document.getElementById("result_percentage").textContent = percentageAnimationCurrentValue + "%";
+            percentageAnimationCurrentValue++;
+
+            if (percentageAnimationCurrentValue > predictedPercentage) {
+                clearInterval(percentageDisplayInterval);
+            }
+        }, intervalTimeout);
     });
 }
 
