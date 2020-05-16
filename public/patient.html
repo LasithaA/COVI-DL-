@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
 <body style="background: white; font-family: 'Montserrat',fantasy; font-size: 17px;">
     <div class="container-fluid">
 
-        <h1 class="text-primary text-center font-weight-bold">Enter Patient Details</h1>
+        <h1 class="text-primary text-center" style="font-size: 6vw">Enter Patient Details</h1>
         <hr class="solid">
         <form>
             <div id="form_sex_age">
@@ -59,9 +59,10 @@
                 <div style="text-align: center">
                     <button class="btn btn-primary" type="button" id="sex_age_form_continue" disabled>Continue</button>
                 </div>
+
+                <br><br id="form_sex_done_scroll_to">
+                <hr class="solid">
             </div>
-            <br><br>
-            <hr class="solid">
 
             <div id="form_current_treatment_status" hidden>
                 <h2 class="text-primary text-center">Current Treatment Status</h2>
@@ -114,9 +115,10 @@
                     <button class="btn btn-primary" type="button" id="current_treatment_form_continue" disabled>Continue
                     </button>
                 </div>
+
+                <br><br id="form_current_treatment_done_scroll_to">
+                <hr class="solid">
             </div>
-            <br><br>
-            <hr class="solid" hidden>
 
             <div id="form_prior_current_health_conditions" hidden>
                 <h2 class="text-primary text-center">Medical History</h2>
@@ -125,7 +127,7 @@
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center form-group" id="form_pneumonia">
                         <h3 class="text-info">Pneumonia</h3>
-                        <p class="text-dark">Have you ever had pneumonia?</p>
+                        <p class="text-dark">Do you currently have pneumonia?</p>
 
                         <!--Select Yes-Pneumonia Button-->
                         <div class="custom-control custom-control-inline custom-radio">
@@ -144,7 +146,7 @@
 
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center form-group" id="form_diabetes">
                         <h3 class="text-info">Diabetes</h3>
-                        <p class="text-dark">Have you ever had diabetes?</p>
+                        <p class="text-dark">Do you currently have diabetes?</p>
 
                         <!--Select Yes-Diabetes Button-->
                         <div class="custom-control custom-control-inline custom-radio">
@@ -166,7 +168,7 @@
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center form-group" id="form_copd">
                         <h3 class="text-info">Chronic Obstructive Pulmonary Disease (COPD)</h3>
-                        <p class="text-dark">Have you ever had COPD?</p>
+                        <p class="text-dark">Do you currently have COPD?</p>
 
                         <!--Select Yes-COPD Button-->
                         <div class="custom-control custom-control-inline custom-radio">
@@ -185,7 +187,7 @@
 
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center form-group" id="form_hypertension">
                         <h3 class="text-info">Hypertension</h3>
-                        <p class="text-dark">Have you ever suffered from hypertension?</p>
+                        <p class="text-dark">Do you currently suffer from hypertension?</p>
 
                         <!--Select Yes-Hypertension Button-->
                         <div class="custom-control custom-control-inline custom-radio">
@@ -207,7 +209,7 @@
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center" id="form_other_diseases">
                         <h3 class="text-info">Other Diseases</h3>
-                        <p class="text-dark">Have you ever had any other diseases, besides those listed above?</p>
+                        <p class="text-dark">Do you currently have any other diseases, besides those listed above?</p>
 
                         <!--Select Yes-OtherDiseases Button-->
                         <div class="custom-control custom-control-inline custom-radio">
@@ -229,9 +231,10 @@
                     <button class="btn btn-primary" type="button" id="prior_health_form_continue" disabled>Continue
                     </button>
                 </div>
+
+                <br><br id="form_prior_current_health_conditions_scroll_to">
+                <hr class="solid">
             </div>
-            <br><br>
-            <hr class="solid" hidden>
 
             <div id="form_smoker" hidden>
                 <h2 class="text-primary text-center">Smoker</h2>
@@ -252,13 +255,37 @@
                         <label class="text-dark custom-control-label" for="smoker_no">No</label>
                     </div>
                 </div>
-            </div>
-            <br><br>
 
-            <div style="text-align: center">
-                <button class="btn btn-primary" type="button" id="submit_form" hidden disabled>Submit</button>
+                <div style="text-align: center">
+                    <button class="btn btn-primary" type="button" id="submit_form" hidden disabled>Submit</button>
+                </div>
+                <br><br>
+                <hr class="solid">
             </div>
         </form>
+
+        <div id="result_section" hidden>
+            <h2 class="text-primary text-center" style="font-size: 6vw">Results</h2>
+            <br><br>
+            <div class="row">
+                <div class="ml-5 col-xs-4 col-sm-4 col-md-4 col-lg-4 text-wrap align-self-center">
+                    <h1 class="text-center flex-fill" style="font-size: 13vw; color: darkorange" id="result_percentage">0%</h1>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-wrap align-self-center">
+                    <p class="text-center text-muted" style="font-size: 3.5vw">Chance of Death</p>
+                </div>
+
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 border-left">
+                </div>
+
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 d-flex text-wrap justify-content-end align-self-center">
+                    <p>SAND links hair rs<br>SAND links hair rs<br>SAND links hair rs<br>SAND links hair rs<br></p>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.7.4/dist/tf.min.js"></script>
