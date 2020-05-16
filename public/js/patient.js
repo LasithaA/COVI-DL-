@@ -6,5 +6,5 @@ async function init() {
         console.log(arr[0][0]);
     });
 }
-// retard
+
 init();
