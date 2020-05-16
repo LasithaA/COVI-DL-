@@ -2,6 +2,7 @@ const formSectionSexAge = document.getElementById("form_sex_age");
 const formSectionCurrentTreatmentStatus = document.getElementById("form_current_treatment_status");
 const formSectionPriorHealthConditions = document.getElementById("form_prior_current_health_conditions");
 const formSectionSmoker = document.getElementById("form_smoker");
+const sectionResults = document.getElementById("result_section");
 
 const buttonContinueSexAge = document.getElementById("sex_age_form_continue");
 const buttonContinueCurrentTreatmentStatus = document.getElementById("current_treatment_form_continue");
@@ -95,6 +96,12 @@ buttonContinuePriorHealthConditions.onclick = function () {
 };
 
 buttonSubmit.onclick = function () {
+    // Show the next section (the results)
+    sectionResults.hidden = false;
+
+    // Scroll to the results section
+    sectionResults.scrollIntoView(true);
+
     // Compile the data from above into an array (formatted as required by the TensorFlow model)
     const compiledPatientHealthData = [
         document.getElementById("sex_male").checked ? 0 : 1,
@@ -110,6 +117,7 @@ buttonSubmit.onclick = function () {
         0,
         document.getElementById("icu_yes").checked ? 0 : 1
     ];
+    // Get the prediction from the model and display it
     tensorFlowModel.predict(tf.tensor([compiledPatientHealthData])).array().then(arr => {
         console.log(arr[0][0]);
     });
