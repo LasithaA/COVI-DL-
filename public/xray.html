@@ -136,9 +136,11 @@ body {
 <body>
     <h1>Upload an Image of the patient's X-Ray</h1>
     <br>
-
-    <input type="file" name="sandFile" id="sandFile" accept="image/*" class="pure-material-button-contained">
-    <button class="pure-material-button-contained">Submit</button>
+    <form method="POST" action="/upload-xray" enctype="multipart/form-data">
+        <input type="file" name="sandFile" id="sandFile" accept="image/*" class="pure-material-button-contained">
+        <input class="pure-material-button-contained" type="submit" name="btn_upload_xray" value="Upload" />
+        
+    </form>
 
     <div class="image-preview" id="imgPreview">
     <img src="" alt="X-Ray Preview" class="preview-image">
