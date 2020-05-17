@@ -39,7 +39,17 @@ submitButton.addEventListener("click", () => {
     .then((res) => {
       console.log(res);
       console.log(res.data[0]);
-      document.getElementById('status').innerHTML = `${res.data[0]}`;
+  
+      if (res.data[0] == 'covid'){
+        document.getElementById('status').innerHTML = "The patient has Covid-19";
+      }
+      else if (res.data[0] == 'pneumonia') {
+        document.getElementById('status').innerHTML = "The patient has Pneumonia";
+      }
+      else if (res.data[0] == 'healthy') {
+        document.getElementById('status').innerHTML = "The patient is";
+      }
+
     })
     .catch((err) => {
       console.error(err);
