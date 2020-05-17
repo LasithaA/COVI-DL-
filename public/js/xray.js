@@ -50,6 +50,23 @@ submitButton.addEventListener("click", () => {
         document.getElementById('status').innerHTML = "The patient is Healthy";
       }
 
+      console.log(res.data[1]);
+      const end_percentage = Math.round(`${res.data[1]}`*100);
+      var current_percentage = 0;
+
+      let intervalTimeout = 500 / end_percentage; // Fix the animation to last for 0.5 seconds
+
+      const percentageDisplayInterval = setInterval(function () {
+          document.getElementById("percentage").textContent = current_percentage + "% Confidence";
+          current_percentage++;
+
+          if (current_percentage > end_percentage) {
+              clearInterval(percentageDisplayInterval);
+          }
+      }, intervalTimeout);
+
+      // document.getElementById('percentage').innerHTML =  + '% confidence';
+
     })
     .catch((err) => {
       console.error(err);

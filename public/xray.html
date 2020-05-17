@@ -9,7 +9,9 @@
       .image-preview {
         width: 50%;
         min-height: 400px;
-        border: 2px solid #dddddd;
+        border: 3px solid rgba(255, 255, 255, 0.1);
+
+        /* border: 2px solid #dddddd; */
         /* margin-top: 15px; */
         margin: auto;
         padding: 10px;
@@ -144,6 +146,8 @@
             <div class="left" style="text-align: center;">
                 <div class="content" style="text-align: center;">
                     <h1>Upload an image of the Chest X-Ray</h1>
+                    <br>
+                    <br>
 
                     <input id="sandFile" type="file" name="myFile" accept="image/*"/>
                     <label for="sandFile" class="btn-2">Choose</label>
@@ -168,6 +172,16 @@
             <div id="right" class="right">
               <h1>X-Ray Result: </h1>
               <h1 id="status">pending...</h1>
+              
+              <div>
+                <h1 id="percentage"></h1>
+              </div>
+
+            </div>
+
+            
+            <div>
+              
             </div>
 
       
