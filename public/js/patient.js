@@ -73,7 +73,7 @@ buttonContinueCurrentTreatmentStatus.onclick = function () {
     formSectionPriorHealthConditions.hidden = false;
 
     // Scroll to this next section
-    formSectionCurrentTreatmentStatus.style.paddingBottom = 0;
+    formSectionCurrentTreatmentStatus.style.height = "auto";
     document.getElementById("form_current_treatment_done_scroll_to").scrollIntoView(true);
 
     // Disable this button (since the next section's button is what the user should use next)
@@ -86,7 +86,7 @@ buttonContinuePriorHealthConditions.onclick = function () {
     formSectionSmoker.hidden = false;
 
     // Scroll to this next section
-    formSectionPriorHealthConditions.style.paddingBottom = 0;
+    formSectionPriorHealthConditions.style.height = "auto";
     document.getElementById("form_prior_current_health_conditions_scroll_to").scrollIntoView(true);
 
     // The next section is the last one, so enable the submit button now
@@ -102,7 +102,7 @@ buttonSubmit.onclick = function () {
     sectionResults.hidden = false;
 
     // Scroll to the results section
-    formSectionSmoker.style.paddingBottom = 0;
+    formSectionSmoker.style.height = "auto";
     sectionResults.scrollIntoView(true);
 
     // Compile the data from above into an array (formatted as required by the TensorFlow model)
