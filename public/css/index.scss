@@ -20,6 +20,10 @@ body {
 		line-height: 1.7rem;
 	}
 
+	.content {
+		padding: 1em;
+	}
+
 	.left {
 		background: linear-gradient(160deg, #1444e2 10%, #2196f3 100%);
 		padding: 1em;
@@ -50,6 +54,9 @@ body {
 }
 
 @media only screen and (min-width: 1250px) {
+	body {
+		font-size: 17px;
+	}
 	.inner {
 		display: grid;
 		grid-template-columns: 67% auto;
@@ -87,9 +94,10 @@ body {
 	}
 }
 
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 1900px) {
 	body {
 		font-size: 21px;
+		overflow-y: hidden;
 	}
 	.content {
 		padding: 0 3em !important;
