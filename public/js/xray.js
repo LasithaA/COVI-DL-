@@ -47,7 +47,7 @@ submitButton.addEventListener("click", () => {
         document.getElementById('status').innerHTML = "The patient has Pneumonia";
       }
       else if (res.data[0] == 'healthy') {
-        document.getElementById('status').innerHTML = "The patient is";
+        document.getElementById('status').innerHTML = "The patient is Healthy";
       }
 
     })
