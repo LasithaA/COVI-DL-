@@ -113,3 +113,9 @@
 .pure-material-button-contained:disabled::after {
 	opacity: 0;
 }
+
+@media only screen and (min-width: 1250px) {
+	.pure-material-button-contained:disabled {
+		font-size: 12px;
+	}
+}

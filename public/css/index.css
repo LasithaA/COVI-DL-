@@ -11,6 +11,11 @@ body {
 .container {
   margin: 0 auto;
   text-align: center;
+  height: 100vh;
+}
+
+.container .inner {
+  height: 100vh;
 }
 
 .container h1 {
@@ -23,11 +28,13 @@ body {
 
 .container .content {
   padding: 1em;
+  height: 100vh;
 }
 
 .container .left {
   background: linear-gradient(160deg, #1444e2 10%, #2196f3 100%);
   padding: 1em;
+  height: 100vh;
 }
 
 .container .left p,
@@ -38,6 +45,10 @@ body {
 
 .container .left .asterisk {
   color: rgba(255, 255, 255, 0.6);
+}
+
+.container .right {
+  height: 100vh;
 }
 
 .container .right p {
@@ -67,7 +78,6 @@ body {
   .inner .left {
     text-align: left;
     padding: 0 2em;
-    padding-top: 4em;
     height: 100vh;
     display: -ms-grid;
     display: grid;
@@ -99,7 +109,6 @@ body {
 @media only screen and (min-width: 1900px) {
   body {
     font-size: 21px;
-    overflow-y: hidden;
   }
   .content {
     padding: 0 3em !important;
