@@ -7,7 +7,9 @@
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 		<link rel="stylesheet" type="text/css" href="css/buttons.css" />
 		<link rel="stylesheet" type="text/css" href="css/all.css" />
+		<link rel="stylesheet" type="text/css" href="css/arrowBtn.css" />
 	</head>
+
 	<body>
 		<div class="proto-container">
 			<div class="proto"></div>
@@ -33,17 +35,18 @@
 						<br />
 						<p>
 							The app uses an image of the patient's X-Ray to classify the user
-							into one of 3 categories: Covid-19, Pneumonia, or Healthy Trained 
-							and is deployed using Google Cloud AutoML. The Survival 
-							Chance part of the app uses the patient's medical information to predict
-							how likely they are to recover from	Covid-19. Trained using a regression
-							neural network model.
+							into one of 3 categories: Covid-19, Pneumonia, or Healthy Trained
+							and is deployed using Google Cloud AutoML. The Survival Chance
+							part of the app uses the patient's medical information to predict
+							how likely they are to recover from Covid-19. Trained using a
+							regression neural network model.
 						</p>
 						<br />
 						<br />
+						<br />
 						<p class="asterisk">
-							** Regression model is created from data gathered from Mexico and is
-							reflective of their population's circumstances
+							** Regression model is created from data gathered from Mexico and
+							is reflective of their population's circumstances
 						</p>
 					</div>
 				</div>
@@ -58,13 +61,15 @@
 							Find out your chances of surviving Covid-19 by entering in your
 							medical information
 						</p>
-
 						<button
-							class="pure-material-button-contained"
 							onclick="location.href='/patient'"
 							type="button"
+							class="learn-more"
 						>
-							Enter Medical Info
+							<span class="circle" aria-hidden="true">
+								<span class="icon arrow"></span>
+							</span>
+							<span class="button-text">Upload X-Ray</span>
 						</button>
 					</div>
 					<div class="patientXray">
@@ -75,12 +80,16 @@
 							Determine if patient has SARS-CoV-2 by uploading image of their
 							chest x-ray
 						</p>
+
 						<button
-							class="pure-material-button-contained"
 							onclick="location.href='/xray'"
 							type="button"
+							class="learn-more"
 						>
-							Upload X-Ray
+							<span class="circle" aria-hidden="true">
+								<span class="icon arrow"></span>
+							</span>
+							<span class="button-text">Upload X-Ray</span>
 						</button>
 					</div>
 				</div>

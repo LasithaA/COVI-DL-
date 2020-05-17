@@ -1,129 +1,134 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap%22");
 body {
-  margin: 0;
-  font-family: "Montserrat";
-  font-weight: 400;
-  background: #eeeeee;
-  font-size: 17px;
-  height: 100vh;
-  color: #2196f3;
+	margin: 0;
+	font-family: "Montserrat";
+	font-weight: 400;
+	background: #eeeeee;
+	font-size: 17px;
+	height: 100vh;
+	color: #2196f3;
 }
 
 .container {
-  margin: 0 auto;
-  text-align: center;
-  height: 100vh;
+	margin: 0 auto;
+	text-align: center;
+	height: 100vh;
 }
 
 .container .inner {
-  height: 100vh;
+	height: 100vh;
 }
 
 .container h1 {
-  margin: 1em 0;
+	margin: 1em 0;
 }
 
 .container p {
-  line-height: 1.7rem;
+	line-height: 1.7rem;
 }
 
 .container .content {
-  padding: 1em;
-  height: 100vh;
+	padding: 1em;
+	padding-left: 2em;
+	height: 100vh;
 }
 
 .container .left {
-  background: linear-gradient(160deg, #1444e2 10%, #2196f3 100%);
-  padding: 1em;
-  height: 100vh;
+	background: linear-gradient(160deg, #1444e2 10%, #2196f3 100%);
+	padding: 1em;
+	height: 100vh;
 }
 
 .container .left p,
 .container .left h1,
 .container .left h3 {
-  color: white;
+	color: white;
 }
 
 .container .left .asterisk {
-  color: rgba(255, 255, 255, 0.6);
+	color: rgba(255, 255, 255, 0.6);
 }
 
 .container .right {
-  height: 100vh;
+	height: 100vh;
+}
+
+.container .right h1 {
+	padding-top: 1em;
 }
 
 .container .right p {
-  margin: 2em 1em;
-  font-weight: 500;
+	margin: 2em 1em;
+	font-weight: 500;
 }
 
 .container .right i {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 .container .right .patientInfo {
-  padding: 2em;
-  padding-bottom: 5em;
+	padding: 2em;
+	padding-bottom: 4em;
 }
 
 .container .right .patientXray {
-  padding-bottom: 5em;
-  padding: 1em;
+	padding-bottom: 5em;
+	padding: 1em;
 }
 
 @media only screen and (min-width: 1250px) {
-  body {
-    font-size: 17px;
-  }
-  .inner {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 67% auto;
-        grid-template-columns: 67% auto;
-  }
-  .inner .left {
-    text-align: left;
-    padding: 0 2em;
-    height: 100vh;
-    display: -ms-grid;
-    display: grid;
-  }
-  .inner .left .content {
-    padding: 0 3em;
-  }
-  .proto-container {
-    -webkit-clip-path: inset(0, 33%, 0, 0);
-            clip-path: inset(0, 33%, 0, 0);
-    position: absolute;
-    top: 20%;
-    height: 70%;
-    z-index: 0;
-    width: 100%;
-    pointer-events: none;
-  }
-  .proto-container .proto {
-    border: 3px solid rgba(255, 255, 255, 0.1);
-    width: 19%;
-    height: 80%;
-    float: left;
-    margin-left: 1em;
-    -webkit-transform: translateX(10%);
-            transform: translateX(10%);
-  }
+	body {
+		font-size: 17px;
+	}
+	.inner {
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: 67% auto;
+		grid-template-columns: 67% auto;
+	}
+	.inner .left {
+		text-align: left;
+		padding: 0 2em;
+		height: 100vh;
+		display: -ms-grid;
+		display: grid;
+	}
+	.inner .left .content {
+		padding: 0 3em;
+	}
+	.proto-container {
+		-webkit-clip-path: inset(0, 33%, 0, 0);
+		clip-path: inset(0, 33%, 0, 0);
+		position: absolute;
+		top: 20%;
+		height: 70%;
+		z-index: 0;
+		width: 100%;
+		pointer-events: none;
+	}
+	.proto-container .proto {
+		border: 3px solid rgba(238, 238, 238, 0.1);
+		width: 19%;
+		height: 80%;
+		float: left;
+		margin-left: 1em;
+		-webkit-transform: translateX(10%);
+		transform: translateX(10%);
+	}
 }
 
 @media only screen and (min-width: 1900px) {
-  body {
-    font-size: 21px;
-  }
-  .content {
-    padding: 0 3em !important;
-  }
-  .content p {
-    line-height: 2.2rem;
-  }
-  .right {
-    padding: 0 !important;
-  }
+	body {
+		font-size: 21px;
+	}
+	.content {
+		padding: 0 3em !important;
+	}
+	.content p {
+		line-height: 2.2rem;
+	}
+	.right {
+		padding: 0 !important;
+	}
 }
 /*# sourceMappingURL=index.css.map */
