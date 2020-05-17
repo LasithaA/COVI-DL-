@@ -5,8 +5,7 @@ body {
 	background: white;
 	font-size: 17px;
 	height: 100vh;
-	color: #2196F3;
-
+	color: #2196f3;
 }
 
 .container {
@@ -22,7 +21,7 @@ body {
 	}
 
 	.left {
-		background: linear-gradient(160deg, #1444e2 10%, #2196F3 100%);
+		background: linear-gradient(160deg, #1444e2 10%, #2196f3 100%);
 		padding: 1em;
 
 		p,
@@ -30,12 +29,14 @@ body {
 		h3 {
 			color: white;
 		}
+		.asterisk {
+			color: rgba(255, 255, 255, 0.6);
+		}
 	}
 	.right {
 		p {
 			margin: 2em 1em;
 		}
-		
 
 		.patientInfo {
 			padding: 2em;
@@ -56,6 +57,7 @@ body {
 		.left {
 			text-align: left;
 			padding: 0 2em;
+			padding-top: 4em;
 			height: 100vh;
 			display: grid;
 
@@ -63,5 +65,39 @@ body {
 				padding: 0 3em;
 			}
 		}
+	}
+
+	.proto-container {
+		clip-path: inset(0, 33%, 0, 0);
+		position: absolute;
+		top: 20%;
+		height: 70%;
+		z-index: 0;
+		width: 100%;
+		pointer-events: none;
+
+		.proto {
+			border: 3px solid rgba(255, 255, 255, 0.1);
+			width: 19%;
+			height: 80%;
+			float: left;
+			margin-left: 1em;
+			transform: translateX(10%);
+		}
+	}
+}
+
+@media only screen and (min-width: 1600px) {
+	body {
+		font-size: 21px;
+	}
+	.content {
+		padding: 0 3em !important;
+		p {
+			line-height: 2.2rem;
+		}
+	}
+	.right {
+		padding: 0 !important;
 	}
 }
