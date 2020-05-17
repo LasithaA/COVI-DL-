@@ -5,10 +5,10 @@
 	display: inline-block;
 	box-sizing: border-box;
 	border: none;
-	border-radius: 4px;
-	padding: 0 16px;
+	border-radius: 100px;
+	padding: 0 25px;
 	min-width: 64px;
-	height: 36px;
+	height: 60px;
 	vertical-align: middle;
 	text-align: center;
 	text-overflow: ellipsis;
@@ -25,7 +25,7 @@
 		system-ui,
 		-apple-system
 	);
-	font-size: 14px;
+	font-size: 17px;
 	font-weight: 500;
 	line-height: 36px;
 	overflow: hidden;
