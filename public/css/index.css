@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap%22");
 body {
   margin: 0;
   font-family: "Montserrat";
-  background: white;
+  font-weight: 400;
+  background: #eeeeee;
   font-size: 17px;
   height: 100vh;
   color: #2196f3;
@@ -53,6 +54,11 @@ body {
 
 .container .right p {
   margin: 2em 1em;
+  font-weight: 500;
+}
+
+.container .right i {
+  font-weight: 700;
 }
 
 .container .right .patientInfo {
