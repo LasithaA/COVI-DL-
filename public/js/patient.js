@@ -106,7 +106,7 @@ buttonSubmit.onclick = function () {
     sectionResults.scrollIntoView(true);
 
     // Compile the data from above into an array (formatted as required by the TensorFlow model)
-    let adjustedAge = document.getElementById("age_selector").value;
+    let adjustedAge = parseInt(document.getElementById("age_selector").value);
     if (document.getElementById("other_diseases_yes").checked) {
         adjustedAge += 1;
     }
