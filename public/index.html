@@ -8,6 +8,12 @@
 		<link rel="stylesheet" type="text/css" href="css/buttons.css" />
 	</head>
 	<body>
+		<div class="proto-container">
+			<div class="proto"></div>
+			<div class="proto"></div>
+			<div class="proto"></div>
+			<div class="proto"></div>
+		</div>
 		<div class="container">
 			<div class="inner">
 				<div class="left">
@@ -22,11 +28,21 @@
 							not they have Covid-19 (with % accuracy) based on their
 							chest-xray. The app uses an image of the patient's X-Ray to
 							classify the user into one of 3 categories: Covid-19, Pneumonia,
-							or Healthy the image. Trained and deployed using Google Cloud
-							AutoML with 94% precision. The Survival Chance part of the app
-							uses the patient's medical information to predict how likely they
-							are to recover from Covid-19. Trained using a regression neural
-							network model with 81% precision.
+							or Healthy the image.
+						</p>
+						<br />
+						<p>
+							Trained and deployed using Google Cloud AutoML with 94% precision.
+							The Survival Chance part of the app uses the patient's medical
+							information to predict how likely they are to recover from
+							Covid-19. Trained using a regression neural network model with 81%
+							precision.
+						</p>
+						<br />
+						<br />
+						<p class="asterisk">
+							** Model is created from data gathered from Mexico and is
+							reflective of their population's circumstances
 						</p>
 					</div>
 				</div>
@@ -69,6 +85,20 @@
 				</div>
 			</div>
 		</div>
-		<script src="js/main.js"></script>
+		<script>
+			let left = document.querySelector(".left");
+			let content = document.querySelector(".content");
+			let protos = document.querySelectorAll(".proto");
+
+			left.addEventListener("mousemove", (event) => {
+				let move = event.clientX * 0.05 + 4;
+				let move2 = event.clientX * 0.003;
+				content.style.transform = `translateX(-${move2}%)`;
+
+				protos.forEach((proto) => {
+					proto.style.transform = `translateX(${move}%)`;
+				});
+			});
+		</script>
 	</body>
 </html>
